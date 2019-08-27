@@ -1,4 +1,7 @@
 # Docker repositories ([Docker Hub](https://hub.docker.com/u/matheusfs))
+Development images for community use.
+Debian + PHP in different versions combinations.
+Also supports choices between Apache2 and Nginx.
 
 ## deb-php ([Docker Hub](https://hub.docker.com/r/matheusfs/deb-php))
 ### Directory Structure
@@ -13,6 +16,11 @@ or
 ```docker
 FROM matheusfs/deb-php:tagname
 ```
+
+### Configuration
+**apache2** root folder is `/var/www/html`
+**nginx** root folder is `/var/www/app`
+
 
 ### Available tags
 #### stretch-5.6
