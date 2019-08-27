@@ -17,7 +17,6 @@ RUN apt-get -y install php7.4 \
     php7.4-xml \ 
     php7.4-curl \ 
     php7.4-mysql \ 
-    php7.4-imagick \ 
     php7.4-zip \ 
     libxrender1 \ 
     libfontconfig1 \ 
