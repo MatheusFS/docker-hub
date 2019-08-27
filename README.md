@@ -1,15 +1,17 @@
 # Docker repositories ([Docker Hub](https://hub.docker.com/u/matheusfs))
 Development images for community use.
-Debian + PHP in different versions combinations.
-Also supports choices between Apache2 and Nginx.
+<img src="https://raw.githubusercontent.com/MatheusFS/brands-library/master/png/debian.png" title="Debian" width="18"> + 
+<img src="https://raw.githubusercontent.com/MatheusFS/brands-library/master/png/php.png" title="PHP" width="25"> in different versions combinations.
+
+Also supports choices between <img src="https://raw.githubusercontent.com/MatheusFS/brands-library/master/png/apache.png" title="Apache 2" width="20"> and <img src="https://raw.githubusercontent.com/MatheusFS/brands-library/master/png/nginx.png" title="Nginx" width="15">.
 
 ## deb-php ([Docker Hub](https://hub.docker.com/r/matheusfs/deb-php))
 ### Directory Structure
-```bash
+```sh
 /$DEBIAN_VERSION-$PHP_VERSION/$WEB_SERVER
 ```
 ### Getting image for use
-```bash
+```sh
 docker pull matheusfs/deb-php:tagname
 ```
 or
@@ -19,6 +21,7 @@ FROM matheusfs/deb-php:tagname
 
 ### Configuration
 **apache2** root folder is `/var/www/html`
+
 **nginx** root folder is `/var/www/app`
 
 
