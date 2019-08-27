@@ -7,7 +7,7 @@
 ```
 ### Getting image for use
 ```bash
-docker push matheusfs/deb-php:tagname
+docker pull matheusfs/deb-php:tagname
 ```
 or
 ```docker
