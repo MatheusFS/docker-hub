@@ -1,7 +1,8 @@
-FROM matheusfs/deb-php:base
+FROM matheusfs/deb-php:stretch-5.6-base
 
 RUN apt-get install -y apache2
 RUN apt-get install libapache2-mod-php5.6
+RUN update-alternatives --set php /usr/bin/php5.6
 RUN a2enmod php5.6
 RUN a2enmod rewrite
 
