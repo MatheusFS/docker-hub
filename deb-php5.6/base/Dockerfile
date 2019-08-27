@@ -1,4 +1,4 @@
-FROM debian:slim
+FROM debian:stretch-slim
 LABEL Author="Matheus Ferreira <matheusfs97@gmail.com>"
 # ========== SET UP APT-GET & ENVIRONMENT ==========
 RUN apt-get update && apt-get upgrade -y
