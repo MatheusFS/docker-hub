@@ -10,8 +10,9 @@ ENV PATH /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:/bin:/us
 # =============== INSTALL PHP & LIBRARIES ===============
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+RUN echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php2.list
 RUN apt-get update 
-RUN apt-get -y install php5.6 --fix-missing \ 
+RUN apt-get -y install php5.6 \ 
     php5.6-fpm \ 
     php5.6-soap \ 
     php5.6-mbstring \ 
