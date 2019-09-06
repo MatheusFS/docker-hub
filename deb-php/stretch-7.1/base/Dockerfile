@@ -12,7 +12,8 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
 RUN apt-get update 
 RUN apt-get -y install php7.1 \ 
-    php7.1-fpm \ 
+    php7.1-fpm \
+    php7.1-soap \ 
     php7.1-mbstring \ 
     php7.1-xml \ 
     php7.1-curl \ 

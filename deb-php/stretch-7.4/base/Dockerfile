@@ -13,6 +13,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
 RUN apt-get update 
 RUN apt-get -y install php7.4 \ 
     php7.4-fpm \ 
+    php7.4-soap \ 
     php7.4-mbstring \ 
     php7.4-xml \ 
     php7.4-curl \ 
