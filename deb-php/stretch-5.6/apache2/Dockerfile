@@ -1,8 +1,6 @@
 FROM matheusfs/deb-php:stretch-5.6-base
 
-RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
 RUN apt-get update
-RUN apt install -y python-certbot-apache -t stretch-backports
 RUN apt-get install -y apache2 libapache2-mod-php5.6
 RUN update-alternatives --set php /usr/bin/php5.6
 RUN a2enmod php5.6

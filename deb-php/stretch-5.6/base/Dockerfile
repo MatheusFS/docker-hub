@@ -1,8 +1,10 @@
 FROM debian:stretch-slim
 LABEL Author="Matheus Ferreira <matheusfs97@gmail.com>"
 # ========== SET UP APT-GET & ENVIRONMENT ==========
+RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y software-properties-common apt-transport-https lsb-release ca-certificates wget locales locales-all
+RUN apt install -y python-certbot-apache -t stretch-backports
+RUN apt-get install -y software-properties-common apt-transport-https lsb-release ca-certificates wget locales locales-all nano
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
