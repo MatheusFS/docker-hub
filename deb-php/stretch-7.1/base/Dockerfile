@@ -21,7 +21,6 @@ RUN apt-get -y install php7.1 \
     php7.1-xml \ 
     php7.1-curl \ 
     php7.1-mysql \ 
-    php7.1-imagick \ 
     php7.1-zip \ 
     libxrender1 \ 
     libfontconfig1 \ 

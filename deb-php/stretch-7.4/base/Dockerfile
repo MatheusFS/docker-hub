@@ -17,7 +17,6 @@ RUN apt-get update
 RUN apt-get -y install php7.4 \ 
     php7.4-fpm \ 
     php7.4-soap \ 
-    php7.4-mbstring \ 
     php7.4-xml \ 
     php7.4-curl \ 
     php7.4-mysql \ 
