@@ -30,3 +30,5 @@ RUN apt-get -y install php5.6 \
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
+# ====================== INSTALL NVM ======================
+RUN wget -O - https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
