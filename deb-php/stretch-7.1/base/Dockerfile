@@ -16,6 +16,8 @@ RUN echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.lis
 RUN apt-get update 
 RUN apt-get -y install php7.1 \ 
     php7.1-fpm \
+    php7.1-intl \
+    php7.1-iconv \
     php7.1-soap \ 
     php7.1-mbstring \ 
     php7.1-xml \ 
