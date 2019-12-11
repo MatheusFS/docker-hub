@@ -17,13 +17,15 @@ RUN rm ./libwebp5_0.4.1-1.2+b2_amd64.deb
 # =============== INSTALL PHP & LIBRARIES ===============
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
-RUN echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php.list
-RUN apt-get update 
+RUN echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list.d/php.list
+RUN apt-get update && apt-get upgrade -y
+RUN apt install imagemagick-common=8:6.8.9.9-5+deb8u18
 RUN apt-get -y install php7.2 \ 
     php7.2-gd \
     php7.2-fpm \
     php7.2-intl \
     php7.2-iconv \
+    php7.2-imagick \
     php7.2-bcmath \
     php7.2-soap \ 
     php7.2-mbstring \ 
