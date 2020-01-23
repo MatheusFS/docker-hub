@@ -17,10 +17,15 @@ RUN wget http://ftp.de.debian.org/debian/pool/main/libw/libwebp/libwebp5_0.4.1-1
 RUN apt-get install ./libwebp5_0.4.1-1.2+b2_amd64.deb
 RUN rm ./libwebp5_0.4.1-1.2+b2_amd64.deb
 # =============== INSTALL PHP & LIBRARIES ===============
+# IMAGICK DEPS
+RUN wget http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick-common_6.8.9.9-5+deb8u19_all.deb
+RUN apt-get install ./imagemagick-common_6.8.9.9-5+deb8u19_all.deb
+RUN rm ./imagemagick-common_6.8.9.9-5+deb8u19_all.deb
+RUN apt install -y libmagickcore-6.q16-2
+# ---
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
 RUN apt-get update && apt-get upgrade -y
-RUN apt install -y imagemagick-common=8:6.8.9.9-5+deb8u19 libmagickcore-6.q16-2
 RUN apt-get -y install php7.2 \ 
     php7.2-gd \
     php7.2-fpm \
