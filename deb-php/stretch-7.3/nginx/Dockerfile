@@ -1,4 +1,4 @@
-FROM matheusfs/deb-php:stretch-5.6-base
+FROM matheusfs/deb-php:stretch-7.3-base
 
 RUN apt-get install -y nginx
 

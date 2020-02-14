@@ -26,14 +26,14 @@ RUN apt install -y libmagickcore-6.q16-2
 # BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML.
 RUN add-apt-repository ppa:ondrej/php
 RUN apt update
-RUN apt-get -y install php7.4 \ 
-    php7.4-fpm \ 
-    php7.4-zip \ 
-    php7.4-bcmath \
-    php7.4-ctype \
-    php7.4-json \
-    php7.4-mbstring \
-    php7.4-pdo \ 
-    php7.4-tokenizer \ 
-    php7.4-xml \ 
+RUN apt-get -y install php7.3 \ 
+    php7.3-fpm \ 
+    php7.3-zip \ 
+    php7.3-bcmath \
+    php7.3-ctype \
+    php7.3-json \
+    php7.3-mbstring \
+    php7.3-pdo \ 
+    php7.3-tokenizer \ 
+    php7.3-xml \ 
     openssl

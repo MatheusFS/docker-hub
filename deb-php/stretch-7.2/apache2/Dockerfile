@@ -1,6 +1,5 @@
 FROM matheusfs/deb-php:stretch-7.2-base
 
-RUN apt-get update
 RUN apt-get install -y apache2 libapache2-mod-php7.2
 RUN update-alternatives --set php /usr/bin/php7.2
 RUN a2enmod php7.2
