@@ -37,6 +37,7 @@ RUN apt-get install -y libmagickcore-6.q16-2
 RUN apt-get -y install php7.1 \ 
     php7.1-fpm \ 
     php7.1-zip \ 
+    php7.1-curl \ 
     php7.1-bcmath \
     php7.1-ctype \
     php7.1-json \

@@ -37,6 +37,7 @@ RUN apt-get install -y libmagickcore-6.q16-2
 RUN apt-get -y install php5.6 \ 
     php5.6-fpm \ 
     php5.6-zip \ 
+    php5.6-curl \ 
     php5.6-bcmath \
     php5.6-ctype \
     php5.6-json \
