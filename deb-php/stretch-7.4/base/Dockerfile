@@ -33,11 +33,12 @@ RUN apt-get install ./imagemagick-common_6.8.9.9-5+deb8u19_all.deb
 RUN rm ./imagemagick-common_6.8.9.9-5+deb8u19_all.deb
 RUN apt-get install -y libmagickcore-6.q16-2
 # LARAVEL 6 PHP Extensions
-# BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML.
+# Curl*, MySQL*, BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML.
 RUN apt-get -y install php7.4 \ 
     php7.4-fpm \ 
     php7.4-zip \ 
     php7.4-curl \ 
+    php7.4-mysql \ 
     php7.4-bcmath \
     php7.4-ctype \
     php7.4-json \
