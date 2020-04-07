@@ -34,6 +34,7 @@ RUN rm ./imagemagick-common_6.8.9.9-5+deb8u19_all.deb
 RUN apt-get install -y libmagickcore-6.q16-2
 # LARAVEL 6 PHP Extensions
 # Curl*, MySQL*, BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML.
+RUN apt-get update -y
 RUN apt-get -y install php7.2 \ 
     php7.2-fpm \ 
     php7.2-zip \ 
