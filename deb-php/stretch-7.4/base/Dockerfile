@@ -37,6 +37,7 @@ RUN apt-get install -y libmagickcore-6.q16-2
 RUN apt-get update -y
 RUN apt-get -y install php7.4 \ 
     php7.4-fpm \ 
+    php7.4-intl \ 
     php7.4-zip \ 
     php7.4-curl \ 
     php7.4-mysql \ 
