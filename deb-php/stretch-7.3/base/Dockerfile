@@ -48,4 +48,7 @@ RUN apt-get -y install php7.3 \
     php7.3-pdo \ 
     php7.3-tokenizer \ 
     php7.3-xml \ 
+    php7.3-dev \ 
+    php7.3-igbinary \ 
+    php7.3-redis \ 
     openssl
