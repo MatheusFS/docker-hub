@@ -47,9 +47,7 @@ RUN apt-get -y install php7.3 \
     php7.3-mbstring \
     php7.3-pdo \ 
     php7.3-tokenizer \ 
-    php7.3-xml \ 
-    php7.3-dev \ 
-    php7.3-igbinary \ 
-    php7.3-redis \ 
-    php7.3-xdebug \ 
+    php7.3-xml \  
     openssl
+RUN apt-get -y install php7.3-dev php-pear
+RUN pecl -d php_suffix=7.3 install igbinary redis xdebug
