@@ -51,4 +51,5 @@ RUN apt-get -y install php7.3 \
     php7.3-dev \ 
     php7.3-igbinary \ 
     php7.3-redis \ 
+    php7.3-xdebug \ 
     openssl
