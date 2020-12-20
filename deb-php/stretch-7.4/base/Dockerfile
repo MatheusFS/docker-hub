@@ -15,7 +15,7 @@ RUN apt-get install -y nano \
     locales-all
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
-RUN apt-get update -y
+RUN apt-get update && apt-get upgrade -y
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
@@ -48,4 +48,9 @@ RUN apt-get -y install php7.4 \
     php7.4-pdo \ 
     php7.4-tokenizer \ 
     php7.4-xml \ 
+    php7.4-gd \ 
     openssl
+RUN apt-get -y install php7.4-dev php-pear
+RUN apt-get -y install php7.4-igbinary \ 
+    php7.4-redis \ 
+    php7.4-xdebug
