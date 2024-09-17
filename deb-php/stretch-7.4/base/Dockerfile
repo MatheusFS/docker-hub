@@ -1,7 +1,7 @@
 FROM debian:stretch-slim
 LABEL Author="Matheus Ferreira <matheusfs97@gmail.com>"
 # ========== SET UP APT-GET & ENVIRONMENT ==========
-RUN echo "deb http://ftp.br.debian.org/debian buster main " >> /etc/apt/sources.list
+RUN echo "deb http://ftp.br.debian.org/debian buster main" >> /etc/apt/sources.list
 RUN echo "deb http://ftp.br.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
 RUN echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list
 RUN apt-get update && apt-get upgrade -y
