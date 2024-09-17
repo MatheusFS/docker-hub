@@ -29,8 +29,8 @@ RUN apt-get -y install php8.3 php8.3-dev
 
 RUN mkdir -p /home/php
 RUN cd /home/php && apt-get source php8.3
-RUN cd /home/php/php8.3-8.3.9/ext/pcntl && phpize && ./configure && make
-RUN cp /home/php/php8.3-8.3.9/ext/pcntl/modules/pcntl.so $(php -i | grep extension_dir  | cut -d " " -f 5)
+RUN cd /home/php/php8.3-8.3.11/ext/pcntl && phpize && ./configure && make
+RUN cp /home/php/php8.3-8.3.11/ext/pcntl/modules/pcntl.so $(php -i | grep extension_dir  | cut -d " " -f 5)
 RUN mkdir -p /etc/php8.3/conf.d
 RUN echo "extension=pcntl.so" > /etc/php8.3/conf.d/pcntl.ini
 
