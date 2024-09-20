@@ -4,7 +4,7 @@ WORKDIR /var/www/html
 
 RUN rm -rf *
 
-RUN apt-get install -y nginx
+RUN apt-get install -y nginx telnet
 
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 

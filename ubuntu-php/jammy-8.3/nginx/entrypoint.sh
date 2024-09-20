@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service php8.3-fpm start
+service php8.3-fpm restart
 service nginx restart
 
 chown -R root:www-data /var/www/html
