@@ -1,0 +1,10 @@
+#!/bin/bash
+docker build -t matheusfs/fpm fpm/
+docker build -t matheusfs/mysql mysql/
+docker build -t matheusfs/prometheus prometheus/
+docker build -t matheusfs/scraper-mysql scraper-mysql/
+
+docker push matheusfs/fpm
+docker push matheusfs/mysql
+docker push matheusfs/prometheus
+docker push matheusfs/scraper-mysql

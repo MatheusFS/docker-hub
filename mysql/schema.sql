@@ -1,3 +1,5 @@
+SET PERSIST lower_case_table_names = 1;
+
 RENAME USER 'root'@'localhost' TO 'root'@'%';
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'dipass';
 
