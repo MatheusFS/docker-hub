@@ -6,4 +6,4 @@ COPY entrypoint.sh /docker-entrypoint.d/
 
 RUN chown -R mysql:mysql /etc/mysql /var/lib/mysql
 RUN chmod +x /docker-entrypoint.d/entrypoint.sh \
-    && chmod 770 /etc/mysql/conf.d/my.cnf
+    && chmod 600 /etc/mysql/conf.d/my.cnf
