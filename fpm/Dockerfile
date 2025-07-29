@@ -1,25 +1,45 @@
-FROM php:8.3-fpm
+FROM php:8.3-fpm-alpine
 
 WORKDIR /var/www/html
 
-RUN apt-get update && apt-get install -y
+# Ensure all packages are up-to-date to reduce vulnerabilities
+RUN apk update && apk upgrade --no-cache
+
+# Install PHP extensions and required Alpine packages
+RUN apk add --no-cache \
+    icu-dev \
+    libzip-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
+    libpng-dev \
+    git \
+    netcat-openbsd \
+    unzip \
+    bash \
+    shadow \
+    curl
 
 RUN docker-php-ext-install -j$(nproc) mysqli pdo_mysql opcache
 
-RUN apt-get install -y libicu-dev && docker-php-ext-install intl
+RUN docker-php-ext-install intl
 
-RUN apt-get install -y libzip-dev && docker-php-ext-install zip
+RUN docker-php-ext-install zip
 
-RUN pecl install --force redis && rm -rf /tmp/pear && docker-php-ext-enable redis
+# Instala dependências de build temporárias para o redis
+RUN apk add --no-cache --virtual .build-deps \
+    autoconf \
+    gcc \
+    g++ \
+    make \
+    libc-dev \
+    openssl-dev \
+    && pecl install redis \
+    && docker-php-ext-enable redis \
+    && apk del .build-deps \
+    && rm -rf /tmp/pear
 
-RUN apt-get install -y \
-    libfreetype-dev \
-    libjpeg62-turbo-dev \
-    libpng-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
-
-RUN apt-get install git netcat-traditional unzip systemctl -y
 
 RUN mkdir -p /usr/local/var/log
 RUN touch /usr/local/var/log/php-fpm.log
